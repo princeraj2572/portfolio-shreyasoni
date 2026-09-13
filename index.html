@@ -1,0 +1,170 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Shreya Soni ♡ | Portfolio &amp; Creative Corner</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pastelPink: '#FFF0F5',
+            softPink: '#FDE2E4',
+            accentPink: '#FFB7B2',
+            rosePink: '#E75480',
+            deepRose: '#D94670',
+            lavender: '#E8DFF5',
+            lavenderDeep: '#D0BCFF',
+            warmCream: '#FFFDF9',
+            softPeach: '#FCE1E4',
+            charcoalPlum: '#2E1F27',
+            mutedPlum: '#4A3B44'
+          },
+          fontFamily: {
+            quicksand: ['Quicksand', 'sans-serif'],
+            caveat: ['Caveat', 'cursive'],
+            gaegu: ['Gaegu', 'cursive']
+          },
+          boxShadow: {
+            'kawaii': '0 10px 25px -5px rgba(231, 84, 128, 0.15), 0 8px 10px -6px rgba(231, 84, 128, 0.1)',
+            'card-soft': '0 4px 20px rgba(74, 59, 68, 0.06)',
+            'glow-pink': '0 0 20px rgba(253, 226, 228, 0.8)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- Google Fonts: Quicksand (Clean Body) and Caveat/Gaegu (Cute Handwritten) -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Gaegu:wght@400;700&amp;family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- CSS Styles: Animations & Decorative Sakura Effects -->
+<style data-purpose="sakura-animations">
+    @keyframes fall {
+      0% {
+        top: -10%;
+        transform: translateX(0) rotate(0deg) scale(0.8);
+        opacity: 0.9;
+      }
+      50% {
+        transform: translateX(60px) rotate(180deg) scale(1);
+        opacity: 0.7;
+      }
+      100% {
+        top: 105%;
+        transform: translateX(-40px) rotate(360deg) scale(0.85);
+        opacity: 0;
+      }
+    }
+
+    .petal {
+      position: fixed;
+      background: radial-gradient(circle, #ffb7b2 20%, #ffccd5 80%);
+      border-radius: 15px 1px 15px 1px;
+      pointer-events: none;
+      z-index: 40;
+      filter: drop-shadow(0 2px 4px rgba(231, 84, 128, 0.2));
+    }
+
+    .petal-1 { width: 14px; height: 16px; left: 10%; animation: fall 11s linear infinite; animation-delay: 0s; }
+    .petal-2 { width: 18px; height: 20px; left: 28%; animation: fall 14s linear infinite; animation-delay: 2.5s; }
+    .petal-3 { width: 12px; height: 14px; left: 45%; animation: fall 10s linear infinite; animation-delay: 5s; }
+    .petal-4 { width: 16px; height: 18px; left: 68%; animation: fall 13s linear infinite; animation-delay: 1.2s; }
+    .petal-5 { width: 15px; height: 17px; left: 85%; animation: fall 12s linear infinite; animation-delay: 4s; }
+    .petal-6 { width: 13px; height: 15px; left: 93%; animation: fall 15s linear infinite; animation-delay: 7s; }
+
+    /* Laser scan animation for CV Project preview */
+    @keyframes scanline {
+      0% { top: 10%; opacity: 0.2; }
+      50% { top: 85%; opacity: 0.9; }
+      100% { top: 10%; opacity: 0.2; }
+    }
+    .laser-scan {
+      animation: scanline 3s ease-in-out infinite;
+    }
+  </style>
+<!-- CSS Styles: Washi Tape & Kawaii Accents -->
+<style data-purpose="kawaii-stickers">
+    .washi-tape-pink {
+      background: rgba(255, 183, 178, 0.65);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .washi-tape-lavender {
+      background: rgba(208, 188, 255, 0.65);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .washi-tape-cream {
+      background: rgba(254, 240, 215, 0.85);
+      backdrop-filter: blur(2px);
+    }
+    /* Subtle paper texture background pattern */
+    .bg-cozy-pattern {
+      background-color: #FFFDF9;
+      background-image: radial-gradient(#FDE2E4 0.75px, transparent 0.75px), radial-gradient(#E8DFF5 0.75px, #FFFDF9 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+    }
+  </style>
+</head>
+<body class="font-quicksand text-charcoalPlum bg-cozy-pattern antialiased selection:bg-softPink selection:text-deepRose min-h-screen relative overflow-x-hidden">
+<!-- Sakura Falling Petals Background Elements -->
+<div aria-hidden="true" class="petal petal-1"></div>
+<div aria-hidden="true" class="petal petal-2"></div>
+<div aria-hidden="true" class="petal petal-3"></div>
+<div aria-hidden="true" class="petal petal-4"></div>
+<div aria-hidden="true" class="petal petal-5"></div>
+<div aria-hidden="true" class="petal petal-6"></div>
+<!-- BEGIN: StickyNavbar -->
+<header class="sticky top-0 z-50 backdrop-blur-md bg-warmCream/85 border-b border-softPink/60 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo Branding -->
+<a class="group flex items-center gap-2 text-2xl font-bold tracking-tight text-charcoalPlum hover:text-rosePink transition-colors" href="#hero">
+<span class="w-10 h-10 rounded-full bg-softPink flex items-center justify-center text-rosePink shadow-sm group-hover:scale-110 transition-transform">
+            🌸
+          </span>
+<span class="font-gaegu text-3xl font-bold text-deepRose">Shreya Soni <span class="text-rosePink inline-block animate-pulse">♡</span></span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-1.5 lg:gap-2">
+<a class="px-3.5 py-1.5 rounded-full text-sm font-semibold text-mutedPlum hover:text-deepRose hover:bg-softPink/50 transition-all" href="#about">About</a>
+<a class="px-3.5 py-1.5 rounded-full text-sm font-semibold text-mutedPlum hover:text-deepRose hover:bg-softPink/50 transition-all" href="#education">Education</a>
+<a class="px-3.5 py-1.5 rounded-full text-sm font-semibold text-mutedPlum hover:text-deepRose hover:bg-softPink/50 transition-all" href="#experience">Experience</a>
+<a class="px-3.5 py-1.5 rounded-full text-sm font-semibold text-mutedPlum hover:text-deepRose hover:bg-softPink/50 transition-all" href="#projects">Projects</a>
+<a class="px-3.5 py-1.5 rounded-full text-sm font-semibold text-mutedPlum hover:text-deepRose hover:bg-softPink/50 transition-all" href="#skills">Skills</a>
+<a class="px-3.5 py-1.5 rounded-full text-sm font-semibold text-mutedPlum hover:text-deepRose hover:bg-softPink/50 transition-all" href="#certifications">Certifications</a>
+<a class="ml-2 px-4 py-2 rounded-full text-sm font-bold bg-softPink text-deepRose border border-accentPink/60 hover:bg-rosePink hover:text-white shadow-sm transition-all hover:scale-105 active:scale-95 flex items-center gap-1.5" href="#contact">
+<span class="">Contact</span>
+<span class="">♡</span>
+</a>
+</nav>
+<!-- Aesthetic Mood Pill Selector & Mobile Toggle -->
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 bg-lavender/50 border border-lavenderDeep/40 rounded-full text-xs font-semibold text-mutedPlum flex items-center gap-1.5 shadow-sm hover:bg-lavender transition-all" data-purpose="theme-toggle" id="themeToggleBtn">
+<span id="themeIcon" class="">🌸</span>
+<span id="themeText" class="">Sakura Breeze</span>
+</button>
+<!-- Mobile Menu Button -->
+<button aria-label="Toggle Navigation Menu" class="md:hidden p-2 rounded-xl text-charcoalPlum hover:bg-softPink transition-colors" id="mobileMenuBtn">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</div>
+<!-- Mobile Drawer Menu -->
+<div class="hidden md:hidden py-4 border-t border-softPink/40 flex flex-col gap-2" id="mobileMenu">
+<a class="px-4 py-2 rounded-xl text-sm font-semibold text-mutedPlum hover:bg-softPink/60" href="#about">About</a>
+<a class="px-4 py-2 rounded-xl text-sm font-semibold text-mutedPlum hover:bg-softPink/60" href="#education">Education</a>
+<a class="px-4 py-2 rounded-xl text-sm font-semibold text-mutedPlum hover:bg-softPink/60" href="#experience">Experience</a>
+<a class="px-4 py-2 rounded-xl text-sm font-semibold text-mutedPlum hover:bg-softPink/60" href="#projects">Projects</a>
+<a class="px-4 py-2 rounded-xl text-sm font-semibold text-mutedPlum hover:bg-softPink/60" href="#skills">Skills</a>
+<a class="px-4 py-2 rounded-xl text-sm font-semibold text-mutedPlum hover:bg-softPink/60" href="#certifications">Certifications</a>
+<a class="px-4 py-2 rounded-xl text-sm font-bold bg-softPink text-deepRose" href="#contact">Let's Connect ♡</a>
+</div>
+</div>
+</header>
+<!-- END: StickyNavbar -->
+<main>
