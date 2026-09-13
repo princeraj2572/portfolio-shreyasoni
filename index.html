@@ -83,6 +83,29 @@
       background-position: 0 0, 15px 15px;
     }
     body[data-theme="golden"] .petal { opacity: 0; }
+    body[data-theme="golden"] .bg-white,
+    body[data-theme="golden"] .bg-warmCream { background-color: #FFF6E0 !important; }
+    body[data-theme="golden"] .bg-white\/10 { background-color: rgba(255, 246, 224, 0.1) !important; }
+    body[data-theme="golden"] .bg-white\/60 { background-color: rgba(255, 246, 224, 0.6) !important; }
+    body[data-theme="golden"] .bg-white\/70 { background-color: rgba(255, 246, 224, 0.7) !important; }
+    body[data-theme="golden"] .bg-white\/80 { background-color: rgba(255, 246, 224, 0.8) !important; }
+    body[data-theme="golden"] .bg-white\/90 { background-color: rgba(255, 246, 224, 0.9) !important; }
+    body[data-theme="golden"] .bg-warmCream\/85 { background-color: rgba(255, 246, 224, 0.85) !important; }
+    body[data-theme="golden"] .bg-warmCream\/90 { background-color: rgba(255, 246, 224, 0.9) !important; }
+    body[data-theme="golden"] .text-charcoalPlum { color: #4A3510 !important; }
+    body[data-theme="golden"] .text-mutedPlum { color: #8A6D3A !important; }
+    body[data-theme="golden"] .border-softPink,
+    body[data-theme="golden"] .border-softPink\/30,
+    body[data-theme="golden"] .border-softPink\/40,
+    body[data-theme="golden"] .border-softPink\/60,
+    body[data-theme="golden"] .border-softPink\/80 { border-color: #E8C468 !important; }
+    body[data-theme="golden"] .bg-softPink\/50,
+    body[data-theme="golden"] .bg-softPink\/60 { background-color: rgba(245, 179, 66, 0.22) !important; }
+    body[data-theme="golden"] .bg-lavender\/50,
+    body[data-theme="golden"] .bg-lavender\/60 { background-color: rgba(217, 155, 46, 0.18) !important; }
+    body[data-theme="golden"] .shadow-card-soft { box-shadow: 0 4px 20px rgba(180, 130, 20, 0.14) !important; }
+    body[data-theme="golden"] .shadow-kawaii { box-shadow: 0 10px 25px -5px rgba(180, 130, 20, 0.2), 0 8px 10px -6px rgba(180, 130, 20, 0.12) !important; }
+
     body[data-theme="lavender"] {
       background-color: #FAF7FC;
       background-image: radial-gradient(#E8DFF5 0.75px, transparent 0.75px), radial-gradient(#D0BCFF 0.75px, #FAF7FC 0.75px);
@@ -93,6 +116,28 @@
       background: radial-gradient(circle, #D0BCFF 20%, #E8DFF5 80%);
       filter: drop-shadow(0 2px 4px rgba(147, 112, 219, 0.25));
     }
+    body[data-theme="lavender"] .bg-white,
+    body[data-theme="lavender"] .bg-warmCream { background-color: #F5EFFC !important; }
+    body[data-theme="lavender"] .bg-white\/10 { background-color: rgba(245, 239, 252, 0.1) !important; }
+    body[data-theme="lavender"] .bg-white\/60 { background-color: rgba(245, 239, 252, 0.6) !important; }
+    body[data-theme="lavender"] .bg-white\/70 { background-color: rgba(245, 239, 252, 0.7) !important; }
+    body[data-theme="lavender"] .bg-white\/80 { background-color: rgba(245, 239, 252, 0.8) !important; }
+    body[data-theme="lavender"] .bg-white\/90 { background-color: rgba(245, 239, 252, 0.9) !important; }
+    body[data-theme="lavender"] .bg-warmCream\/85 { background-color: rgba(245, 239, 252, 0.85) !important; }
+    body[data-theme="lavender"] .bg-warmCream\/90 { background-color: rgba(245, 239, 252, 0.9) !important; }
+    body[data-theme="lavender"] .text-charcoalPlum { color: #3B2A52 !important; }
+    body[data-theme="lavender"] .text-mutedPlum { color: #6B5B85 !important; }
+    body[data-theme="lavender"] .border-softPink,
+    body[data-theme="lavender"] .border-softPink\/30,
+    body[data-theme="lavender"] .border-softPink\/40,
+    body[data-theme="lavender"] .border-softPink\/60,
+    body[data-theme="lavender"] .border-softPink\/80 { border-color: #D9C8F5 !important; }
+    body[data-theme="lavender"] .bg-softPink\/50,
+    body[data-theme="lavender"] .bg-softPink\/60 { background-color: rgba(147, 112, 219, 0.18) !important; }
+    body[data-theme="lavender"] .bg-lavender\/50,
+    body[data-theme="lavender"] .bg-lavender\/60 { background-color: rgba(147, 112, 219, 0.25) !important; }
+    body[data-theme="lavender"] .shadow-card-soft { box-shadow: 0 4px 20px rgba(120, 80, 180, 0.14) !important; }
+    body[data-theme="lavender"] .shadow-kawaii { box-shadow: 0 10px 25px -5px rgba(120, 80, 180, 0.2), 0 8px 10px -6px rgba(120, 80, 180, 0.12) !important; }
 
     /* Night Glow (Dark Mode) */
     body[data-theme="dark"] {
@@ -1213,10 +1258,10 @@
 
       const themes = [
         { key: 'sakura', name: 'Sakura Breeze', icon: '🌸' },
+        { key: 'shadow', name: 'Shadow Realm', icon: '🖤' },
         { key: 'golden', name: 'Golden Sunlight', icon: '☀️' },
         { key: 'lavender', name: 'Lavender Study', icon: '📖' },
-        { key: 'dark', name: 'Night Glow', icon: '🌙' },
-        { key: 'shadow', name: 'Shadow Realm', icon: '🖤' }
+        { key: 'dark', name: 'Night Glow', icon: '🌙' }
       ];
 
       const savedThemeKey = localStorage.getItem('portfolioTheme');
