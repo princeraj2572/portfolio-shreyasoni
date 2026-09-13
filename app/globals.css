@@ -1,26 +1,132 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-pastelPink: #FFF0F5;
+  --color-softPink: #FDE2E4;
+  --color-accentPink: #FFB7B2;
+  --color-rosePink: #E75480;
+  --color-deepRose: #D94670;
+  --color-lavender: #E8DFF5;
+  --color-lavenderDeep: #D0BCFF;
+  --color-warmCream: #FFFDF9;
+  --color-softPeach: #FCE1E4;
+  --color-charcoalPlum: #2E1F27;
+  --color-mutedPlum: #4A3B44;
+
+  --font-quicksand: var(--font-quicksand);
+  --font-caveat: var(--font-caveat);
+  --font-gaegu: var(--font-gaegu);
+
+  --shadow-kawaii: 0 10px 25px -5px rgba(231, 84, 128, 0.15), 0 8px 10px -6px rgba(231, 84, 128, 0.1);
+  --shadow-card-soft: 0 4px 20px rgba(74, 59, 68, 0.06);
+  --shadow-glow-pink: 0 0 20px rgba(253, 226, 228, 0.8);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Sakura falling-petal animation */
+@keyframes fall {
+  0% {
+    top: -10%;
+    transform: translateX(0) rotate(0deg) scale(0.8);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateX(60px) rotate(180deg) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    top: 105%;
+    transform: translateX(-40px) rotate(360deg) scale(0.85);
+    opacity: 0;
   }
 }
 
+.petal {
+  position: fixed;
+  background: radial-gradient(circle, #ffb7b2 20%, #ffccd5 80%);
+  border-radius: 15px 1px 15px 1px;
+  pointer-events: none;
+  z-index: 40;
+  filter: drop-shadow(0 2px 4px rgba(231, 84, 128, 0.2));
+}
+
+.petal-1 { width: 14px; height: 16px; left: 10%; animation: fall 11s linear infinite; animation-delay: 0s; }
+.petal-2 { width: 18px; height: 20px; left: 28%; animation: fall 14s linear infinite; animation-delay: 2.5s; }
+.petal-3 { width: 12px; height: 14px; left: 45%; animation: fall 10s linear infinite; animation-delay: 5s; }
+.petal-4 { width: 16px; height: 18px; left: 68%; animation: fall 13s linear infinite; animation-delay: 1.2s; }
+.petal-5 { width: 15px; height: 17px; left: 85%; animation: fall 12s linear infinite; animation-delay: 4s; }
+.petal-6 { width: 13px; height: 15px; left: 93%; animation: fall 15s linear infinite; animation-delay: 7s; }
+
+/* Mood Switcher: Sakura Breeze / Shadow Realm */
+
+/* Shadow Realm (Dark/Evil Grey Mode) */
+body[data-theme="shadow"] {
+  background-color: #0c0c0e;
+  background-image: radial-gradient(#232326 0.75px, transparent 0.75px), radial-gradient(#1a1a1c 0.75px, #0c0c0e 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+body[data-theme="shadow"] .petal {
+  background: radial-gradient(circle, #4a4a4d 20%, #232326 80%);
+  filter: drop-shadow(0 2px 6px rgba(220, 38, 38, 0.35));
+  opacity: 0.85;
+}
+body[data-theme="shadow"] .bg-white,
+body[data-theme="shadow"] .bg-warmCream { background-color: #19191c !important; }
+body[data-theme="shadow"] .bg-white\/10 { background-color: rgba(25, 25, 28, 0.1) !important; }
+body[data-theme="shadow"] .bg-white\/60 { background-color: rgba(25, 25, 28, 0.6) !important; }
+body[data-theme="shadow"] .bg-white\/70 { background-color: rgba(25, 25, 28, 0.7) !important; }
+body[data-theme="shadow"] .bg-white\/80 { background-color: rgba(25, 25, 28, 0.8) !important; }
+body[data-theme="shadow"] .bg-white\/90 { background-color: rgba(25, 25, 28, 0.9) !important; }
+body[data-theme="shadow"] .bg-warmCream\/85 { background-color: rgba(25, 25, 28, 0.85) !important; }
+body[data-theme="shadow"] .bg-warmCream\/90 { background-color: rgba(25, 25, 28, 0.9) !important; }
+body[data-theme="shadow"] .text-charcoalPlum { color: #ececee !important; }
+body[data-theme="shadow"] .text-mutedPlum { color: #9a9aa1 !important; }
+body[data-theme="shadow"] .border-softPink,
+body[data-theme="shadow"] .border-softPink\/30,
+body[data-theme="shadow"] .border-softPink\/40,
+body[data-theme="shadow"] .border-softPink\/60,
+body[data-theme="shadow"] .border-softPink\/80 { border-color: #313134 !important; }
+body[data-theme="shadow"] .bg-softPink\/50,
+body[data-theme="shadow"] .bg-softPink\/60 { background-color: rgba(220, 38, 38, 0.16) !important; }
+body[data-theme="shadow"] .bg-lavender\/50,
+body[data-theme="shadow"] .bg-lavender\/60 { background-color: rgba(146, 146, 150, 0.2) !important; }
+body[data-theme="shadow"] .shadow-card-soft { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important; }
+body[data-theme="shadow"] .shadow-kawaii { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(220, 38, 38, 0.12) !important; }
+
+/* Laser scan animation for CV Project preview */
+@keyframes scanline {
+  0% { top: 10%; opacity: 0.2; }
+  50% { top: 85%; opacity: 0.9; }
+  100% { top: 10%; opacity: 0.2; }
+}
+.laser-scan {
+  animation: scanline 3s ease-in-out infinite;
+}
+
+/* Washi Tape & Kawaii Accents */
+.washi-tape-pink {
+  background: rgba(255, 183, 178, 0.65);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.washi-tape-lavender {
+  background: rgba(208, 188, 255, 0.65);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.washi-tape-cream {
+  background: rgba(254, 240, 215, 0.85);
+  backdrop-filter: blur(2px);
+}
+
+/* Subtle paper texture background pattern */
+.bg-cozy-pattern {
+  background-color: #FFFDF9;
+  background-image: radial-gradient(#FDE2E4 0.75px, transparent 0.75px), radial-gradient(#E8DFF5 0.75px, #FFFDF9 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-quicksand), sans-serif;
 }
