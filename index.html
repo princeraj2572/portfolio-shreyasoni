@@ -94,6 +94,76 @@
       filter: drop-shadow(0 2px 4px rgba(147, 112, 219, 0.25));
     }
 
+    /* Night Glow (Dark Mode) */
+    body[data-theme="dark"] {
+      background-color: #17111f;
+      background-image: radial-gradient(#2a2035 0.75px, transparent 0.75px), radial-gradient(#241c30 0.75px, #17111f 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+    }
+    body[data-theme="dark"] .petal {
+      background: radial-gradient(circle, #ffd9e6 20%, #ffffff 65%);
+      filter: drop-shadow(0 2px 6px rgba(255, 217, 230, 0.35));
+      opacity: 0.85;
+    }
+    body[data-theme="dark"] .bg-white,
+    body[data-theme="dark"] .bg-warmCream { background-color: #241a30 !important; }
+    body[data-theme="dark"] .bg-white\/10 { background-color: rgba(36, 26, 48, 0.1) !important; }
+    body[data-theme="dark"] .bg-white\/60 { background-color: rgba(36, 26, 48, 0.6) !important; }
+    body[data-theme="dark"] .bg-white\/70 { background-color: rgba(36, 26, 48, 0.7) !important; }
+    body[data-theme="dark"] .bg-white\/80 { background-color: rgba(36, 26, 48, 0.8) !important; }
+    body[data-theme="dark"] .bg-white\/90 { background-color: rgba(36, 26, 48, 0.9) !important; }
+    body[data-theme="dark"] .bg-warmCream\/85 { background-color: rgba(43, 32, 56, 0.85) !important; }
+    body[data-theme="dark"] .bg-warmCream\/90 { background-color: rgba(43, 32, 56, 0.9) !important; }
+    body[data-theme="dark"] .text-charcoalPlum { color: #f3e8f5 !important; }
+    body[data-theme="dark"] .text-mutedPlum { color: #c7b3d6 !important; }
+    body[data-theme="dark"] .border-softPink,
+    body[data-theme="dark"] .border-softPink\/30,
+    body[data-theme="dark"] .border-softPink\/40,
+    body[data-theme="dark"] .border-softPink\/60,
+    body[data-theme="dark"] .border-softPink\/80 { border-color: #4a3658 !important; }
+    body[data-theme="dark"] .bg-softPink\/50,
+    body[data-theme="dark"] .bg-softPink\/60 { background-color: rgba(217, 70, 112, 0.2) !important; }
+    body[data-theme="dark"] .bg-lavender\/50,
+    body[data-theme="dark"] .bg-lavender\/60 { background-color: rgba(208, 188, 255, 0.2) !important; }
+
+    /* Shadow Realm (Dark/Evil Grey Mode) */
+    body[data-theme="shadow"] {
+      background-color: #0c0c0e;
+      background-image: radial-gradient(#232326 0.75px, transparent 0.75px), radial-gradient(#1a1a1c 0.75px, #0c0c0e 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+    }
+    body[data-theme="shadow"] .petal {
+      background: radial-gradient(circle, #4a4a4d 20%, #232326 80%);
+      filter: drop-shadow(0 2px 6px rgba(220, 38, 38, 0.35));
+      opacity: 0.85;
+    }
+    body[data-theme="shadow"] .bg-white,
+    body[data-theme="shadow"] .bg-warmCream { background-color: #19191c !important; }
+    body[data-theme="shadow"] .bg-white\/10 { background-color: rgba(25, 25, 28, 0.1) !important; }
+    body[data-theme="shadow"] .bg-white\/60 { background-color: rgba(25, 25, 28, 0.6) !important; }
+    body[data-theme="shadow"] .bg-white\/70 { background-color: rgba(25, 25, 28, 0.7) !important; }
+    body[data-theme="shadow"] .bg-white\/80 { background-color: rgba(25, 25, 28, 0.8) !important; }
+    body[data-theme="shadow"] .bg-white\/90 { background-color: rgba(25, 25, 28, 0.9) !important; }
+    body[data-theme="shadow"] .bg-warmCream\/85 { background-color: rgba(25, 25, 28, 0.85) !important; }
+    body[data-theme="shadow"] .bg-warmCream\/90 { background-color: rgba(25, 25, 28, 0.9) !important; }
+    body[data-theme="shadow"] .text-charcoalPlum { color: #ececee !important; }
+    body[data-theme="shadow"] .text-mutedPlum { color: #9a9aa1 !important; }
+    body[data-theme="shadow"] .border-softPink,
+    body[data-theme="shadow"] .border-softPink\/30,
+    body[data-theme="shadow"] .border-softPink\/40,
+    body[data-theme="shadow"] .border-softPink\/60,
+    body[data-theme="shadow"] .border-softPink\/80 { border-color: #313134 !important; }
+    body[data-theme="shadow"] .bg-softPink\/50,
+    body[data-theme="shadow"] .bg-softPink\/60 { background-color: rgba(220, 38, 38, 0.16) !important; }
+    body[data-theme="shadow"] .bg-lavender\/50,
+    body[data-theme="shadow"] .bg-lavender\/60 { background-color: rgba(146, 146, 150, 0.2) !important; }
+    body[data-theme="shadow"] .shadow-card-soft { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important; }
+    body[data-theme="shadow"] .shadow-kawaii { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(220, 38, 38, 0.12) !important; }
+    body[data-theme="dark"] .shadow-card-soft { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important; }
+    body[data-theme="dark"] .shadow-kawaii { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.45), 0 8px 10px -6px rgba(0, 0, 0, 0.3) !important; }
+
     /* Laser scan animation for CV Project preview */
     @keyframes scanline {
       0% { top: 10%; opacity: 0.2; }
@@ -1144,7 +1214,9 @@
       const themes = [
         { key: 'sakura', name: 'Sakura Breeze', icon: '🌸' },
         { key: 'golden', name: 'Golden Sunlight', icon: '☀️' },
-        { key: 'lavender', name: 'Lavender Study', icon: '🌙' }
+        { key: 'lavender', name: 'Lavender Study', icon: '📖' },
+        { key: 'dark', name: 'Night Glow', icon: '🌙' },
+        { key: 'shadow', name: 'Shadow Realm', icon: '🖤' }
       ];
 
       const savedThemeKey = localStorage.getItem('portfolioTheme');
