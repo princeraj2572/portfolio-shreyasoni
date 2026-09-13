@@ -75,6 +75,25 @@
     .petal-5 { width: 15px; height: 17px; left: 85%; animation: fall 12s linear infinite; animation-delay: 4s; }
     .petal-6 { width: 13px; height: 15px; left: 93%; animation: fall 15s linear infinite; animation-delay: 7s; }
 
+    /* Mood Switcher: Sakura Breeze / Golden Sunlight / Lavender Study */
+    body[data-theme="golden"] {
+      background-color: #FFFDF4;
+      background-image: radial-gradient(#FDE68A 0.75px, transparent 0.75px), radial-gradient(#FFE9A8 0.75px, #FFFDF4 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+    }
+    body[data-theme="golden"] .petal { opacity: 0; }
+    body[data-theme="lavender"] {
+      background-color: #FAF7FC;
+      background-image: radial-gradient(#E8DFF5 0.75px, transparent 0.75px), radial-gradient(#D0BCFF 0.75px, #FAF7FC 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+    }
+    body[data-theme="lavender"] .petal {
+      background: radial-gradient(circle, #D0BCFF 20%, #E8DFF5 80%);
+      filter: drop-shadow(0 2px 4px rgba(147, 112, 219, 0.25));
+    }
+
     /* Laser scan animation for CV Project preview */
     @keyframes scanline {
       0% { top: 10%; opacity: 0.2; }
@@ -110,7 +129,7 @@
     }
   </style>
 </head>
-<body class="font-quicksand text-charcoalPlum bg-cozy-pattern antialiased selection:bg-softPink selection:text-deepRose min-h-screen relative overflow-x-hidden">
+<body class="font-quicksand text-charcoalPlum bg-cozy-pattern antialiased selection:bg-softPink selection:text-deepRose min-h-screen relative overflow-x-hidden" data-theme="sakura">
 <!-- Sakura Falling Petals Background Elements -->
 <div aria-hidden="true" class="petal petal-1"></div>
 <div aria-hidden="true" class="petal petal-2"></div>
@@ -1117,25 +1136,34 @@
         });
       }
 
-      // 3. Cute Theme Mood Switcher (Daylight / Sakura / Night Glow)
+      // 3. Cute Theme Mood Switcher (Sakura Breeze / Golden Sunlight / Lavender Study)
       const themeToggleBtn = document.getElementById('themeToggleBtn');
       const themeIcon = document.getElementById('themeIcon');
       const themeText = document.getElementById('themeText');
-      
-      const themes = [
-        { name: 'Sakura Breeze', icon: '🌸', bgClass: 'bg-cozy-pattern' },
-        { name: 'Golden Sunlight', icon: '☀️', bgClass: 'bg-[#FFFDF4]' },
-        { name: 'Lavender Study', icon: '🌙', bgClass: 'bg-[#FAF7FC]' }
-      ];
-      let currentThemeIdx = 0;
 
-      if (themeToggleBtn && themeIcon && themeText) {
+      const themes = [
+        { key: 'sakura', name: 'Sakura Breeze', icon: '🌸' },
+        { key: 'golden', name: 'Golden Sunlight', icon: '☀️' },
+        { key: 'lavender', name: 'Lavender Study', icon: '🌙' }
+      ];
+
+      const savedThemeKey = localStorage.getItem('portfolioTheme');
+      let currentThemeIdx = Math.max(0, themes.findIndex((t) => t.key === savedThemeKey));
+
+      function applyTheme(theme) {
+        document.body.setAttribute('data-theme', theme.key);
+        if (themeIcon) themeIcon.textContent = theme.icon;
+        if (themeText) themeText.textContent = theme.name;
+        localStorage.setItem('portfolioTheme', theme.key);
+      }
+
+      applyTheme(themes[currentThemeIdx]);
+
+      if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
           currentThemeIdx = (currentThemeIdx + 1) % themes.length;
-          const current = themes[currentThemeIdx];
-          themeIcon.textContent = current.icon;
-          themeText.textContent = current.name;
-          
+          applyTheme(themes[currentThemeIdx]);
+
           // Smooth mood notification feedback
           themeToggleBtn.classList.add('scale-105');
           setTimeout(() => themeToggleBtn.classList.remove('scale-105'), 200);
