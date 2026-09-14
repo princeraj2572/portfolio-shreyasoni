@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Briefcase, Building2, Sparkle } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Experience | Shreya Soni",
@@ -11,7 +12,7 @@ export default function ExperiencePage() {
         <div className="text-center mb-14">
           <span className="text-deepRose font-caveat text-2xl font-bold">Hands-on Industry Work</span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-charcoalPlum mt-1 flex items-center justify-center gap-2">
-            My Experience 💼
+            <Briefcase className="w-8 h-8" /> My Experience
           </h2>
           <div className="w-16 h-1 bg-accentPink mx-auto mt-3 rounded-full" />
         </div>
@@ -30,32 +31,32 @@ export default function ExperiencePage() {
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-charcoalPlum">Zoho CRM Developer Intern</h3>
               <p className="text-lg font-bold text-deepRose mt-1 flex items-center gap-2">
-                <span>🏢</span> Muxlet
+                <Building2 className="w-5 h-5" /> Muxlet
               </p>
               <ul className="mt-6 space-y-3.5 text-sm sm:text-base text-mutedPlum">
                 <li className="flex items-start gap-2.5">
-                  <span className="text-deepRose mt-1">✦</span>
+                  <Sparkle className="w-4 h-4 text-deepRose mt-1 shrink-0" />
                   <span>
                     <strong>Deluge Scripting &amp; Customization:</strong> Customized Zoho CRM modules and automated
                     complex workflows using Deluge scripting to streamline operations.
                   </span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-deepRose mt-1">✦</span>
+                  <Sparkle className="w-4 h-4 text-deepRose mt-1 shrink-0" />
                   <span>
                     <strong>Real-time Business Data:</strong> Worked directly with real-time business data to
                     optimize data handling pipelines and enhance overall system efficiency.
                   </span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-deepRose mt-1">✦</span>
+                  <Sparkle className="w-4 h-4 text-deepRose mt-1 shrink-0" />
                   <span>
                     <strong>API Integration:</strong> Assisted in seamless third-party API integrations and
                     end-to-end automation of critical CRM processes.
                   </span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-deepRose mt-1">✦</span>
+                  <Sparkle className="w-4 h-4 text-deepRose mt-1 shrink-0" />
                   <span>
                     <strong>Manual Work Reduction:</strong> Slashed repetitive manual data tasks through tailored,
                     reliable automation solutions.
@@ -95,13 +96,13 @@ export default function ExperiencePage() {
                   <p>);</p>
                   <p>
                     <span className="text-yellow-300">info</span>{" "}
-                    <span className="text-pink-300">&quot;API sync completed ♡&quot;</span>;
+                    <span className="text-pink-300">&quot;API sync completed&quot;</span>;
                   </p>
                 </div>
               </div>
               <div className="bg-[#FFF9D2] p-4 rounded-2xl shadow-sm border border-amber-200 text-center transform rotate-1">
                 <p className="font-caveat text-xl sm:text-2xl text-amber-900 font-bold">
-                  &quot;Small automations. Big impact ♡&quot;
+                  &quot;Small automations. Big impact&quot;
                 </p>
                 <span className="text-[11px] font-semibold text-amber-700">
                   Deluge · API Integrations · CRM Workflows

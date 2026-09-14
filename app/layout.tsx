@@ -24,7 +24,7 @@ const gaegu = Gaegu({
 });
 
 export const metadata: Metadata = {
-  title: "Shreya Soni ♡ | Portfolio & Creative Corner",
+  title: "Shreya Soni | Portfolio & Creative Corner",
   description:
     "Shreya Soni — B.Tech Computer Science student and AI & Data Science enthusiast. Portfolio featuring projects, experience, skills and certifications.",
 };

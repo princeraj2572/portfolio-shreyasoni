@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Check, ChevronUp, Search, Sparkle } from "lucide-react";
 
 export default function ProjectCard() {
   const [detailsOpen, setDetailsOpen] = useState(false);
@@ -27,8 +28,8 @@ export default function ProjectCard() {
 
             <div className="mt-6 space-y-3.5 text-sm sm:text-base text-mutedPlum">
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-softPink flex items-center justify-center text-deepRose text-xs font-bold shrink-0 mt-0.5">
-                  ✓
+                <div className="w-6 h-6 rounded-full bg-softPink flex items-center justify-center text-deepRose shrink-0 mt-0.5">
+                  <Check className="w-3.5 h-3.5" />
                 </div>
                 <span>
                   <strong>Automated Billing via Object Detection:</strong> Implemented computer vision object
@@ -37,8 +38,8 @@ export default function ProjectCard() {
                 </span>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-softPink flex items-center justify-center text-deepRose text-xs font-bold shrink-0 mt-0.5">
-                  ✓
+                <div className="w-6 h-6 rounded-full bg-softPink flex items-center justify-center text-deepRose shrink-0 mt-0.5">
+                  <Check className="w-3.5 h-3.5" />
                 </div>
                 <span>
                   <strong>Efficiency Optimization:</strong> Significantly enhanced checkout throughput and customer
@@ -46,8 +47,8 @@ export default function ProjectCard() {
                 </span>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-softPink flex items-center justify-center text-deepRose text-xs font-bold shrink-0 mt-0.5">
-                  ✓
+                <div className="w-6 h-6 rounded-full bg-softPink flex items-center justify-center text-deepRose shrink-0 mt-0.5">
+                  <Check className="w-3.5 h-3.5" />
                 </div>
                 <span>
                   <strong>Ongoing Refinement:</strong> Continuously working on elevating real-time detection
@@ -74,7 +75,7 @@ export default function ProjectCard() {
               className="px-6 py-3 rounded-full bg-deepRose hover:bg-rosePink text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-md flex items-center gap-2"
             >
               <span>{detailsOpen ? "HIDE PROJECT ARCHITECTURE" : "VIEW PROJECT ARCHITECTURE"}</span>
-              <span>{detailsOpen ? "▲" : "✦"}</span>
+              {detailsOpen ? <ChevronUp className="w-4 h-4" /> : <Sparkle className="w-4 h-4" />}
             </button>
           </div>
         </div>
@@ -98,7 +99,7 @@ export default function ProjectCard() {
               </div>
               <div className="flex justify-between text-xs font-mono pt-1 text-emerald-200">
                 <span>SKU: #88219</span>
-                <span>Item Verified ✓</span>
+                <span>Item Verified</span>
               </div>
             </div>
             <div className="border-2 border-pink-400 bg-pink-400/10 p-3 rounded-lg relative">
@@ -107,7 +108,7 @@ export default function ProjectCard() {
               </div>
               <div className="flex justify-between text-xs font-mono pt-1 text-pink-200">
                 <span>SKU: #40112</span>
-                <span>Item Verified ✓</span>
+                <span>Item Verified</span>
               </div>
             </div>
           </div>
@@ -118,7 +119,7 @@ export default function ProjectCard() {
               <span>Instant Cart Total: Auto-Calc</span>
             </div>
             <div className="font-caveat text-lg text-pink-300 text-center font-bold">
-              &quot;Streamlined automated retail checkout ♡&quot;
+              &quot;Streamlined automated retail checkout&quot;
             </div>
           </div>
         </div>
@@ -127,7 +128,7 @@ export default function ProjectCard() {
       {detailsOpen && (
         <div className="p-6 sm:p-8 bg-warmCream border-t-2 border-softPink">
           <h4 className="text-base font-bold text-charcoalPlum mb-2 flex items-center gap-1.5">
-            <span>🔍</span> Technical Highlights &amp; Implementation Notes
+            <Search className="w-4 h-4" /> Technical Highlights &amp; Implementation Notes
           </h4>
           <p className="text-sm text-mutedPlum leading-relaxed">
             Designed to solve queue bottlenecks in high-volume retail. By passing webcam frames through color space

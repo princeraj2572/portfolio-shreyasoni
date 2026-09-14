@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Flower2, Moon } from "lucide-react";
 
 const THEMES = [
-  { key: "sakura", name: "Sakura Breeze", icon: "🌸" },
-  { key: "shadow", name: "Shadow Realm", icon: "🖤" },
+  { key: "sakura", name: "Sakura Breeze", icon: Flower2 },
+  { key: "shadow", name: "Shadow Realm", icon: Moon },
 ] as const;
 
 export default function ThemeToggle() {
@@ -34,7 +35,7 @@ export default function ThemeToggle() {
       onClick={handleClick}
       className="px-3 py-1.5 bg-lavender/50 border border-lavenderDeep/40 rounded-full text-xs font-semibold text-mutedPlum flex items-center gap-1.5 shadow-sm hover:bg-lavender active:scale-105 transition-all"
     >
-      <span>{current.icon}</span>
+      <current.icon className="w-3.5 h-3.5" />
       <span>{current.name}</span>
     </button>
   );
